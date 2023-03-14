@@ -2,11 +2,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.opencsv.CSVReader;
-import com.opencsv.CSVReaderBuilder;
-import com.opencsv.CSVWriter;
-import com.opencsv.bean.StatefulBeanToCsv;
-import com.opencsv.bean.StatefulBeanToCsvBuilder;
+
 
 import java.io.*;
 import java.nio.file.Files;
@@ -234,7 +230,7 @@ public class AddressBookFeatures {
 
     }
 
-    public void writeDataToCSVFile() {
+    public void writeDataToJSONFile() {
 
         try (Writer writer = Files.newBufferedWriter(Paths.get("C:\\Users\\asaha\\Desktop\\Java_Fellowship_242\\Address_Book_CSV_And_JSON\\src\\main\\resources\\jsonOutput.json"))) {
             Gson gson = new Gson();
@@ -247,7 +243,7 @@ public class AddressBookFeatures {
         }
     }
 
-    public void readFromCSVFile() {
+    public void readFromJSONFile() {
 
         try (Reader reader = Files.newBufferedReader(Paths.get("C:\\Users\\asaha\\Desktop\\Java_Fellowship_242\\Address_Book_CSV_And_JSON\\src\\main\\resources\\jsonOutput.json"))) {
             JsonParser jsonParser = new JsonParser();
